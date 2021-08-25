@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai8</title>
+</head>
+<body>
+<button type="button" onclick="play()">Chơi game</button>
+<script>
+    function play() {
+        let a = parseInt(prompt("Nhập số bé nhất: "))
+        let b =parseInt(prompt("Nhập số lớn nhất: "))
+        let num = Math.floor(Math.random() * (b - a)) + a
+        let i = 1
+        let guess
+        do {
+            guess = parseInt(prompt("Số bạn đoán là: "))
+            if (guess<num) {
+                alert('Nhập số lớn hơn: ')
+            } else  if (guess > num) {
+                alert('Nhập số nhỏ hơn: ')
+            }
+                i++
+            } while (guess !== num && i < 4)
+
+                if (guess === num && i < 4 ) {
+                alert('Chúc mừng bạn')
+                } else {
+                    alert('Xin chia buồn.')
+                }
+    }
+</script>
+</body>
+</html>
